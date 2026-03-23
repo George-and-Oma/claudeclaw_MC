@@ -24,8 +24,8 @@ Personal AI assistant accessible via Telegram, powered by the Claude Agent SDK. 
 ## Installation
 
 ```bash
-git clone https://github.com/okenwa/claudeclaw.git
-cd claudeclaw
+git clone https://github.com/George-and-Oma/claudeclaw_MC.git
+cd claudeclaw_MC/backend
 npm install
 ```
 
