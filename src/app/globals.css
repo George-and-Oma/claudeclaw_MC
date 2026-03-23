@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #161616;
+  --bg-tertiary: #1f1f1f;
+  --bg-card: #1a1a1a;
+  --bg-hover: #252525;
+  --border-color: #2a2a2a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  --accent-purple: #8b5cf6;
+  --accent-blue: #3b82f6;
+  --accent-green: #22c55e;
+  --accent-yellow: #eab308;
+  --accent-red: #ef4444;
+  --accent-orange: #f97316;
+}
+
+/* Light theme overrides */
+.light-theme {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #ebebeb;
+  --bg-card: #f9f9f9;
+  --bg-hover: #e5e5e5;
+  --border-color: #d4d4d4;
+  --text-primary: #171717;
+  --text-secondary: #525252;
+  --text-muted: #737373;
+}
+
+/* Apply light theme colors to Tailwind classes */
+.light-theme body,
+.light-theme .bg-\[\#0d0d0d\] {
+  background-color: #ffffff !important;
+}
+
+.light-theme .bg-\[\#161616\],
+.light-theme .bg-\[\#1a1a1a\] {
+  background-color: #f5f5f5 !important;
+}
+
+.light-theme .bg-\[\#1f1f1f\],
+.light-theme .bg-\[\#252525\] {
+  background-color: #e5e5e5 !important;
+}
+
+.light-theme .border-\[\#2a2a2a\] {
+  border-color: #d4d4d4 !important;
+}
+
+.light-theme .border-\[\#3a3a3a\] {
+  border-color: #c4c4c4 !important;
+}
+
+.light-theme .text-white {
+  color: #171717 !important;
+}
+
+.light-theme .text-\[\#666\],
+.light-theme .text-\[\#666666\] {
+  color: #737373 !important;
+}
+
+.light-theme .text-\[\#a0a0a0\] {
+  color: #525252 !important;
+}
+
+.light-theme .text-\[\#888\] {
+  color: #636363 !important;
+}
+
+.light-theme .text-\[\#555\] {
+  color: #8a8a8a !important;
+}
+
+.light-theme .text-\[\#e0e0e0\],
+.light-theme .text-\[\#c0c0c0\] {
+  color: #3a3a3a !important;
+}
+
+.light-theme .text-\[\#444\] {
+  color: #a3a3a3 !important;
+}
+
+/* Scrollbar for light theme */
+.light-theme ::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #b4b4b4;
+}
+
+/* Hover states for light theme */
+.light-theme .hover\:bg-\[\#161616\]:hover,
+.light-theme .hover\:bg-\[\#1f1f1f\]:hover {
+  background-color: #e5e5e5 !important;
+}
+
+.light-theme .hover\:text-white:hover {
+  color: #171717 !important;
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Enable safe area insets for iOS PWA */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* Prevent content from going under the notch/dynamic island */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+/* PWA standalone mode - add extra padding at top for status bar */
+@media all and (display-mode: standalone) {
+  header {
+    padding-top: max(env(safe-area-inset-top), 20px) !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+.kanban-column {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
